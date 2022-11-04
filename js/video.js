@@ -56,18 +56,16 @@ document.querySelector("#skip").addEventListener("click", function() {
 // Mute Video: mute/unmute the video and update the text in the button.
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == true) {
-		console.log("Unmute")
-		video.muted = false
-		document.querySelector("#mute").innerHTML = "Unmute"
+		console.log("Unmute");
+		video.muted = false;
+		document.querySelector("#mute").innerHTML = "Unmute";
 		// this.innerHTML = "Mute"
 	} else {
-		console.log("Mute")
-		video.muted = true
-		document.querySelector("#mute").innerHTML = "Unmute"
+		console.log("Mute");
+		video.muted = true;
+		document.querySelector("#mute").innerHTML = "Unmute";
 		// this.innerHTML = "Unmute"
 	}
-// need if/else statement
-// if video.muted = True --> display something
 });
 
 // Volume Slider
@@ -78,4 +76,14 @@ document.querySelector("#slider").addEventListener("click", function() {
 	console.log("New Volume is: " + video.volume)
 	// updates the text to be able to show the percentage
 	document.querySelector("#volume").innerHTML = video.volume * 100 + "%"
+});
+
+// Styled & Original
+document.querySelector("#vintage").addEventListener("click", function() {
+	console.log("Style: 'oldSchool'") 
+	video.classList.add("oldSchool")
+});
+document.querySelector("#orig").addEventListener("click", function() {
+	console.log("Style: 'original'") 
+	video.classList.remove("oldSchool")
 });
