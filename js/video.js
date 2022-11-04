@@ -2,7 +2,7 @@ var video = document.querySelector("#player1");
 // 'querySelector' allows you to style like CSS with #
 // if using 'getElementById', then do not need # in front of player 1 bc already accounted for by the selector
 
-// Load Video
+// Load Video: initialize the video element, turn off autoplay, & turn of looping.
 window.addEventListener("load", function() {
 	console.log("Page Loading...")
 	video = document.querySelector("#player1")
@@ -12,7 +12,7 @@ window.addEventListener("load", function() {
 	console.log("Loop is set to " + video.loop)
 });
 
-// Play Video & Volume
+// Play Video & Update Volume: play the video & UPDATE the volume information.
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play()
@@ -25,7 +25,7 @@ document.querySelector("#pause").addEventListener("click", function() {
 	video.pause()
 });
 
-// Slow Down Video
+// Slow Down Video: slow the current video speed by 10% each time the button is clicked.
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Slow Down Video");
 	// multiplies by 90% of its current speed; 10%
@@ -33,7 +33,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Speed: " + video.playbackRate)
 });
 
-// Speed Up Video
+// Speed Up Video: increase the current video speed each time the button is clicked & log the new speed.
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed Up Video");
 	// divides by 90% of its current speed
@@ -41,7 +41,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed: " + video.playbackRate)
 });
 
-// Skip Ahead
+// Skip Ahead: advance the current video by 10 seconds; if the video length is exceeded, go back to the start.
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead");
 	// increase the video by 10 seconds
@@ -53,13 +53,18 @@ document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Video Current Time: " + video.currentTime)
 });
 
-// Mute Video
+// Mute Video: mute/unmute the video and update the text in the button.
 document.querySelector("#mute").addEventListener("click", function() {
-	console.log("Mute: " + video.muted)
-	if (video.muted = true) {
-		
-	} else {
+	if (video.muted == true) {
+		console.log("Unmute")
 		video.muted = false
+		document.querySelector("#mute").innerHTML = "Unmute"
+		// this.innerHTML = "Mute"
+	} else {
+		console.log("Mute")
+		video.muted = true
+		document.querySelector("#mute").innerHTML = "Unmute"
+		// this.innerHTML = "Unmute"
 	}
 // need if/else statement
 // if video.muted = True --> display something
