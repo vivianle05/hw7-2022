@@ -1,6 +1,6 @@
 var video = document.querySelector("#player1");
 // 'querySelector' allows you to style like CSS with #
-// if using 'getElementById', then do not need # in front of player 1 bc already accounted for by the selector
+// if using 'getElementById', then do not need # in front of player 1 bc already accounted for by querySelector
 
 // Load Video: initialize the video element, turn off autoplay, & turn of looping.
 window.addEventListener("load", function() {
@@ -57,11 +57,13 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == true) {
 		console.log("Unmute");
+		// if volume muted, 'Unmute' button shows and on click, video becomes unmuted (button changes to 'Mute')
 		video.muted = false;
-		document.querySelector("#mute").innerHTML = "Unmute";
+		document.querySelector("#mute").innerHTML = "Mute";
 		// this.innerHTML = "Mute"
 	} else {
 		console.log("Mute");
+		// if volume unmuted, 'Mute' button shows and on click, video becomes muted (button changes to 'Unmute')
 		video.muted = true;
 		document.querySelector("#mute").innerHTML = "Unmute";
 		// this.innerHTML = "Unmute"
@@ -81,9 +83,11 @@ document.querySelector("#slider").addEventListener("click", function() {
 // Styled & Original
 document.querySelector("#vintage").addEventListener("click", function() {
 	console.log("Style: 'oldSchool'") 
+	// adds the 'oldSchool' style on click
 	video.classList.add("oldSchool")
 });
 document.querySelector("#orig").addEventListener("click", function() {
 	console.log("Style: 'original'") 
+	// removes the 'oldSchool' style on click and goes back to 'original'
 	video.classList.remove("oldSchool")
 });
