@@ -60,12 +60,16 @@ document.querySelector("#mute").addEventListener("click", function() {
 		// if volume muted, 'Unmute' button shows and on click, video becomes unmuted (button changes to 'Mute')
 		video.muted = false;
 		document.querySelector("#mute").innerHTML = "Mute";
+		// 'Volume is:' 100% when unmuted
+		document.querySelector("#volume").innerHTML = "100%"
 		// this.innerHTML = "Mute"
 	} else {
 		console.log("Mute");
 		// if volume unmuted, 'Mute' button shows and on click, video becomes muted (button changes to 'Unmute')
 		video.muted = true;
 		document.querySelector("#mute").innerHTML = "Unmute";
+		// 'Volume is:' is 0% when unmuted
+		document.querySelector("#volume").innerHTML = "0%"
 		// this.innerHTML = "Unmute"
 	}
 });
